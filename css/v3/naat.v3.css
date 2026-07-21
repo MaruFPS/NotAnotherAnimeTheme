@@ -158,12 +158,15 @@
   height: 100% !important;
 }
 
-.wrapper__58105.overlay__58105 .item__58105:not([style*="height: 8px"]) {
-  border-color: transparent;
-  background-color: initial;
+#guild-list-unread-dms .item__58105 {
+  display: none !important;
 }
 
-#guild-list-unread-dms .item__58105 {
+.item__58105.hovered__58105 {
+  display: none !important;
+}
+
+.tutorialContainer__1f388 .item__58105 {
   display: none !important;
 }
 
