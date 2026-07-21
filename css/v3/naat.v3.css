@@ -96,7 +96,6 @@
   margin: 2px;
 }
 
-
 .stack_dbd263 .wrapper__48112 .listItem__650eb {
   width: initial;
 }
@@ -163,6 +162,10 @@
 }
 
 .item__58105.hovered__58105 {
+  display: none !important;
+}
+
+.item__58105.selected__58105 {
   display: none !important;
 }
 
