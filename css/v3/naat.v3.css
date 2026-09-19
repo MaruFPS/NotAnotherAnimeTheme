@@ -1,3 +1,50 @@
+:root {
+  --naat-glass-settings: rgba(0, 0, 0, 0.26);
+  --naat-glass-page: rgba(0, 0, 0, 0.10);
+  --naat-glass-modal: rgba(0, 0, 0, 0.18);
+  --naat-glass-card: rgba(0, 0, 0, 0.28);
+  --naat-glass-activity: rgba(255, 255, 255, 0.10);
+  --naat-glass-quest: rgba(0, 0, 0, 0.18);
+  --naat-glass-shop: rgba(0, 0, 0, 0.52);
+  --naat-glass-player: rgba(0, 0, 0, 0.08);
+  --naat-glass-composer: rgba(0, 0, 0, 0.10);
+  --naat-glass-blur: 5px;
+}
+
+/* Clear inherited structural color tokens only within the selected routes/dialogs. */
+#app-mount :is(.container__8a031, .root__49fc1):has(.modalContentInner_e44912, .content_e9e3ed, .sidebar__409aa),
+#app-mount .container_abd9a8,
+#app-mount [class*="container_"]:has(> [class*="sidebar__409aa"]):has(> [class*="content_e9e3ed"]),
+#app-mount .container__9a9f9,
+#app-mount [class*="standardSidebarView_"],
+#app-mount :is(.shop__6db1d, .shop__08415),
+#app-mount .container__0b563,
+#app-mount .page_c791b2,
+#app-mount .container__89463,
+#app-mount .questHomePage__1add6,
+#app-mount .container_a56260,
+#app-mount .contentContainer_a56260,
+#app-mount .focusLock__49fc1[role="dialog"]:has(.container__710ee) > .root__49fc1,
+#app-mount .container__8a031[data-mana-component="modal"]:has(> .header__8a031):has(> .body__8a031) {
+  --background-primary: transparent !important;
+  --background-secondary: transparent !important;
+  --background-secondary-alt: transparent !important;
+  --background-tertiary: transparent !important;
+  --background-floating: transparent !important;
+  --background-base-lowest: transparent !important;
+  --background-base-lower: transparent !important;
+  --background-base-low: transparent !important;
+  --background-surface-lowest: transparent !important;
+  --background-surface-lower: transparent !important;
+  --background-surface-low: transparent !important;
+  --background-surface-high: transparent !important;
+  --background-surface-higher: transparent !important;
+  --background-surface-highest: transparent !important;
+  --bg-base-primary: transparent !important;
+  --bg-base-secondary: transparent !important;
+  --bg-base-tertiary: transparent !important;
+}
+
 .appMount__51fd7 {
   background: transparent;
   background-image: var(--theme-background-image);
@@ -344,8 +391,7 @@
 }
 
 .standardSidebarView__23e6b {
-  background: rgba(0, 0, 0, 0.26);
-  backdrop-filter: blur(5px);
+  background: var(--naat-glass-settings);
 }
 
 .sidebarRegionScroller__23e6b {
@@ -364,13 +410,327 @@
   background-color: transparent;
 }
 
-/* Current Discord settings root glass */
-.container__9a9f9,
-.container_abd9a8 {
-  background-color: rgba(0, 0, 0, 0.26);
-  background-image: none;
-  border-color: transparent;
-  backdrop-filter: blur(5px);
+/* Settings: current V2 and classic roots. */
+#app-mount :is(.container__8a031, .root__49fc1):has(.modalContentInner_e44912, .content_e9e3ed, .sidebar__409aa),
+#app-mount .container_abd9a8,
+#app-mount [class*="container_"]:has(> [class*="sidebar__409aa"]):has(> [class*="content_e9e3ed"]),
+#app-mount .container__9a9f9,
+#app-mount [class*="standardSidebarView_"] {
+  background-color: var(--naat-glass-settings) !important;
+  background-image: none !important;
+  border-color: transparent !important;
+}
+
+/* Page/profile tint. Existing artwork is retained. */
+#app-mount :is(.aside_f58343, .user-profile-sidebar, .user-profile-sidebar-redesign),
+#app-mount .container__955a3,
+#app-mount .applicationStore_f07d62,
+#app-mount .container__551b0,
+#app-mount :is(.shop__6db1d, .shop__08415),
+#app-mount .container__0b563,
+#app-mount .page_c791b2,
+#app-mount .container__89463 {
+  background-color: var(--naat-glass-page) !important;
+}
+
+/* Create/join server, exact Events root, and current Privacy/Notification dialogs. */
+#app-mount .container__23ba6,
+#app-mount .focusLock__49fc1[role="dialog"]:has(.container__710ee) > .root__49fc1,
+#app-mount .container__8a031[data-mana-component="modal"]:has(> .header__8a031):has(> .body__8a031) {
+  background-color: var(--naat-glass-modal) !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+#app-mount .container__8a031[data-mana-component="modal"]:has(> .header__8a031):has(> .body__8a031):has(.modalContentInner_e44912, .content_e9e3ed, .sidebar__409aa) {
+  background-color: var(--naat-glass-settings) !important;
+}
+
+/* Settings wrappers expose the existing NAAT wallpaper; no wallpaper-layer overrides. */
+#app-mount .layer__960e4,
+#app-mount .sidebar__409aa,
+#app-mount .fixedContent__409aa,
+#app-mount .content_e9e3ed,
+#app-mount .contentHeader_e9e3ed,
+#app-mount .modalContentInner_e44912,
+#app-mount [class*="contentRegion_"],
+#app-mount [class*="contentRegionScroller_"],
+#app-mount [class*="sidebarRegion_"],
+#app-mount [class*="sidebarRegionScroller_"],
+#app-mount :is(.container__8a031, .root__49fc1):has(.content_e9e3ed) :is(.modalBg_b824c5, .modalContent_b824c5, .modalContent__8fb25) {
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+#app-mount .container__9a9f9 > div,
+#app-mount .modalContentInner_e44912 > div,
+#app-mount .modalContentInner_e44912 > div > div,
+#app-mount .container__9a9f9::before,
+#app-mount .container__9a9f9::after,
+#app-mount .modalContentInner_e44912::before,
+#app-mount .modalContentInner_e44912::after {
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Current Mana modal: one continuous surface, without older frosted subgroup tiles. */
+#app-mount .container__8a031[data-mana-component="modal"]:has(> .header__8a031):has(> .body__8a031) :is(.section__8a031, .header__8a031, .sectionHidden__8a031, .bodySpacerTop__8a031, .body__8a031, .bodySpacerBottom__8a031, .actionBar__8a031, .bodyInner__8a031),
+#app-mount .container__8a031[data-mana-component="modal"]:has(> .header__8a031):has(> .body__8a031) .bodyInner__8a031 > :is(div, section):has([role="switch"], [role="radio"], [role="combobox"]) {
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Profile and Active Now structural layers. */
+#app-mount :is(.aside_f58343, .user-profile-sidebar, .user-profile-sidebar-redesign) :is(.container_a823cd, .scrollerBase_d125d2),
+#app-mount :is(.nowPlayingColumn__133bf, .container__7d20c, .scroller__7d20c),
+#app-mount .interactive_bf1984 .inset_bf1984 {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+#app-mount :is(.aside_f58343, .user-profile-sidebar, .user-profile-sidebar-redesign) :is(div, section):has(.activity__5be3e) {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Native profile activity: current direct tint, without old wrapper/pseudo-element fixes. */
+#app-mount :is(.aside_f58343, .user-profile-sidebar, .user-profile-sidebar-redesign) .activity__5be3e,
+#app-mount :is(.aside_f58343, .user-profile-sidebar, .user-profile-sidebar-redesign) .activity__5be3e:hover {
+  background-color: var(--naat-glass-activity) !important;
+  box-shadow: none !important;
+}
+
+#app-mount :is(.aside_f58343, .user-profile-sidebar, .user-profile-sidebar-redesign) .activity__5be3e :is(.body__5be3e, .footer__5be3e),
+#app-mount :is(.aside_f58343, .user-profile-sidebar, .user-profile-sidebar-redesign) .activity__5be3e::before,
+#app-mount :is(.aside_f58343, .user-profile-sidebar, .user-profile-sidebar-redesign) .activity__5be3e::after {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Current Activity: tint the existing article; do not create the Hybrid decoration. */
+#app-mount .cards_b32ca4 .cardsList__9d597 > .firstCardContainer__9d597 > article {
+  background-color: var(--naat-glass-activity) !important;
+  box-shadow: none !important;
+}
+
+#app-mount .cards_b32ca4 .cardsList__9d597 > .firstCardContainer__9d597 > article > .clickableContainer__39ec2,
+#app-mount .cards_b32ca4 .cardsList__9d597 > .firstCardContainer__9d597 > article > .clickableContainer__39ec2:hover,
+#app-mount .cards_b32ca4 .cardsList__9d597 > .firstCardContainer__9d597 > article :is(.focusTarget__54e4b, .overlay_0bea0, .card__39ec2, .card__9d597, .header__39ec2, .body__39ec2, .actions__39ec2) {
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Quest route wrappers; preserve hero/reward artwork. */
+#app-mount .questHomePage__1add6,
+#app-mount .container_a56260,
+#app-mount .contentContainer_a56260,
+#app-mount .headerBar__1a9ce {
+  background-color: transparent !important;
+}
+
+/* Quest cards receive only tint. No all-descendant or button background clearing. */
+#app-mount .questTile__60f82,
+#app-mount :is(.questHomePage__1add6, .contentContainer_a56260) :is([class*="questTile" i], [class*="questCard" i], article:has([class*="reward" i]):has(button), [class*="card_" i]:has([class*="reward" i]):has(button), [class*="tile_" i]:has([class*="reward" i]):has(button)) {
+  background-color: var(--naat-glass-quest) !important;
+  box-shadow: none !important;
+}
+
+#app-mount .questTile__60f82 :is([class*="body_" i], [class*="content_" i], [class*="footer_" i], [class*="details_" i], [class*="actions_" i]),
+#app-mount :is(.questHomePage__1add6, .contentContainer_a56260) :is([class*="questTile" i], [class*="questCard" i], article:has([class*="reward" i]):has(button), [class*="card_" i]:has([class*="reward" i]):has(button), [class*="tile_" i]:has([class*="reward" i]):has(button)) :is([class*="body_" i], [class*="content_" i], [class*="footer_" i], [class*="details_" i], [class*="actions_" i]) {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Shop structural paint only; preserve the original scroll owners and scrollbars. */
+#app-mount .content__08415,
+#app-mount .shopFullscreen__08415,
+#app-mount .shopScroll__6db1d,
+#app-mount .shopScroll__1feb0,
+#app-mount .shopViewWrapper__6db1d,
+#app-mount .pageWrapper__6db1d,
+#app-mount .page__1feb0,
+#app-mount .shopScrollBackgroundPrimary__28f1d,
+#app-mount .pageWrapperBackgroundPrimary__36469 {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Hybrid darker product tint preserves price/text readability. */
+#app-mount .productCardContainer_fcbddd {
+  background-color: var(--naat-glass-shop) !important;
+}
+
+#app-mount .productCardContainer_fcbddd :is(.darkCardBackground_c3d04b, .lightCardBackground_c3d04b, .cardBackground_c23530) {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Selected modal/page content layers: no broad generic-modal or scrollbar overrides. */
+#app-mount .applicationStore_f07d62 :is(.scroller__244e5, .mainPageScroller__80907, .homeWrapper__0920e),
+#app-mount .container__23ba6 :is(.header_c04f35, .footer_c04f35, .templatesList_c04f35, .optionsList__78f69),
+#app-mount :is(.container_a592e1, .scroller__23746, .content_b6bcee, .headerBar__8a7fc),
+#app-mount .focusLock__49fc1[role="dialog"]:has(.container__710ee) :is(.header__49fc1, .content__49fc1, .container__710ee, .container__05cdc),
+#app-mount .container__0b563 :is(.scroller__5d7c9, .pageBody__5d7c9),
+#app-mount .page_c791b2 :is(.header_c791b2, .content_f75fb0, .container_c791b2, .scrollbarGutterStable_d125d2, .horizontalScroller__09a38, .searchHeaderContainer__98d1c, .loaderContainer__09a38, .paginationContainer_e8f197, .saveNoticeContainer__7796e),
+#app-mount .page_c791b2 :is(.table_b4ec0b, [class*="memberRowContainer"]),
+#app-mount .container__89463 :is(.contentContainer__89463, .sidebarContainer__89463, .toolbar__89463) {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Content cards share parent glass; original controls and accent remain unchanged. */
+#app-mount .interactive_bf1984,
+#app-mount .emptyCard__7e549,
+#app-mount .applicationStore_f07d62 .card__5b393,
+#app-mount .container__23ba6 :is(.container_eb2cd2, .rowContainer-3t7486),
+#app-mount .card__4cb8a,
+#app-mount .container__0b563 :is(.prompt__5d7c9, .profileCard__5d7c9),
+#app-mount .page_c791b2 .mainTableContainer__09a38,
+#app-mount .container__89463 :is(.container__5573a, .container__3f864, .container__1dc40, .container__58c46, .container__2281b, .subscription_d970da) {
+  background-color: var(--naat-glass-card) !important;
+  box-shadow: none !important;
+}
+
+/* One existing bottom-left panel surface; no sizing, order or account-row overrides. */
+#app-mount section[class*="panels_"][aria-label="User status and settings"] {
+  background-color: var(--naat-glass-player) !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Clear existing Twitch/Kick/YTMD/Spotify panel fills while keeping art and playback controls. */
+#app-mount section[class*="panels_"][aria-label="User status and settings"] > :is(:has(img[title*="on Twitch"]), :has(img[title*="on Kick"]), :has([title*="YouTube Music"]), :has(#vc-spotify-player)),
+#app-mount section[class*="panels_"][aria-label="User status and settings"] > :is(:has(img[title*="on Twitch"]), :has(img[title*="on Kick"]), :has([title*="YouTube Music"]), :has(#vc-spotify-player)) div[style*="padding: 8px 10px"],
+#app-mount section[class*="panels_"][aria-label="User status and settings"] #vc-spotify-player {
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+  backdrop-filter: none !important;
+}
+
+/* Composer tint on the existing surface; skip blur that would need a positioned decoration. */
+#app-mount [class*="channelTextArea_"] {
+  background-color: var(--naat-glass-composer) !important;
+  background-image: none !important;
+}
+
+#app-mount [class*="channelTextArea_"] :is([class*="scrollableContainer_"], [class*="themedBackground_"]) {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Nested shell fallbacks share the outer surface instead of stacking tints/blur. */
+#app-mount :is(
+  :is(.container__8a031, .root__49fc1):has(.modalContentInner_e44912, .content_e9e3ed, .sidebar__409aa),
+  .container_abd9a8,
+  [class*="container_"]:has(> [class*="sidebar__409aa"]):has(> [class*="content_e9e3ed"]),
+  .container__9a9f9,
+  [class*="standardSidebarView_"],
+  :is(.aside_f58343, .user-profile-sidebar, .user-profile-sidebar-redesign),
+  .container__955a3,
+  .applicationStore_f07d62,
+  .container__551b0,
+  :is(.shop__6db1d, .shop__08415),
+  .container__0b563,
+  .page_c791b2,
+  .container__89463,
+  .container__23ba6,
+  .focusLock__49fc1[role="dialog"]:has(.container__710ee) > .root__49fc1,
+  .container__8a031[data-mana-component="modal"]:has(> .header__8a031):has(> .body__8a031),
+  section[class*="panels_"][aria-label="User status and settings"],
+  .nowPlayingColumn__133bf
+):where(#app-mount :is(
+  :is(.container__8a031, .root__49fc1):has(.modalContentInner_e44912, .content_e9e3ed, .sidebar__409aa),
+  .container_abd9a8,
+  [class*="container_"]:has(> [class*="sidebar__409aa"]):has(> [class*="content_e9e3ed"]),
+  .container__9a9f9,
+  [class*="standardSidebarView_"],
+  :is(.aside_f58343, .user-profile-sidebar, .user-profile-sidebar-redesign),
+  .container__955a3,
+  .applicationStore_f07d62,
+  .container__551b0,
+  :is(.shop__6db1d, .shop__08415),
+  .container__0b563,
+  .page_c791b2,
+  .container__89463,
+  .container__23ba6,
+  .focusLock__49fc1[role="dialog"]:has(.container__710ee) > .root__49fc1,
+  .container__8a031[data-mana-component="modal"]:has(> .header__8a031):has(> .body__8a031),
+  section[class*="panels_"][aria-label="User status and settings"],
+  .nowPlayingColumn__133bf
+) *) {
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+}
+
+/* A single 5px filter on each outermost existing surface; no app-shell filter. */
+#app-mount :is(
+  :is(.container__8a031, .root__49fc1):has(.modalContentInner_e44912, .content_e9e3ed, .sidebar__409aa),
+  .container_abd9a8,
+  [class*="container_"]:has(> [class*="sidebar__409aa"]):has(> [class*="content_e9e3ed"]),
+  .container__9a9f9,
+  [class*="standardSidebarView_"],
+  :is(.aside_f58343, .user-profile-sidebar, .user-profile-sidebar-redesign),
+  .container__955a3,
+  .applicationStore_f07d62,
+  .container__551b0,
+  :is(.shop__6db1d, .shop__08415),
+  .container__0b563,
+  .page_c791b2,
+  .container__89463,
+  .container__23ba6,
+  .focusLock__49fc1[role="dialog"]:has(.container__710ee) > .root__49fc1,
+  .container__8a031[data-mana-component="modal"]:has(> .header__8a031):has(> .body__8a031),
+  section[class*="panels_"][aria-label="User status and settings"],
+  .nowPlayingColumn__133bf
+):not(:where(#app-mount :is(
+  :is(.container__8a031, .root__49fc1):has(.modalContentInner_e44912, .content_e9e3ed, .sidebar__409aa),
+  .container_abd9a8,
+  [class*="container_"]:has(> [class*="sidebar__409aa"]):has(> [class*="content_e9e3ed"]),
+  .container__9a9f9,
+  [class*="standardSidebarView_"],
+  :is(.aside_f58343, .user-profile-sidebar, .user-profile-sidebar-redesign),
+  .container__955a3,
+  .applicationStore_f07d62,
+  .container__551b0,
+  :is(.shop__6db1d, .shop__08415),
+  .container__0b563,
+  .page_c791b2,
+  .container__89463,
+  .container__23ba6,
+  .focusLock__49fc1[role="dialog"]:has(.container__710ee) > .root__49fc1,
+  .container__8a031[data-mana-component="modal"]:has(> .header__8a031):has(> .body__8a031),
+  section[class*="panels_"][aria-label="User status and settings"],
+  .nowPlayingColumn__133bf
+) *)) {
+  backdrop-filter: blur(var(--naat-glass-blur)) !important;
+}
+
+/* No repeated card/hover/composer blur, including the matching imported NAAT effects. */
+#app-mount .interactive_bf1984,
+#app-mount .emptyCard__7e549,
+#app-mount .applicationStore_f07d62 .card__5b393,
+#app-mount .container__23ba6 :is(.container_eb2cd2, .rowContainer-3t7486),
+#app-mount .card__4cb8a,
+#app-mount .container__0b563 :is(.prompt__5d7c9, .profileCard__5d7c9),
+#app-mount .page_c791b2 .mainTableContainer__09a38,
+#app-mount .container__89463 :is(.container__5573a, .container__3f864, .container__1dc40, .container__58c46, .container__2281b, .subscription_d970da),
+#app-mount :is(.questHomePage__1add6, .contentContainer_a56260) :is([class*="questTile" i], [class*="questCard" i], article:has([class*="reward" i]):has(button), [class*="card_" i]:has([class*="reward" i]):has(button), [class*="tile_" i]:has([class*="reward" i]):has(button)),
+#app-mount .questTile__60f82,
+#app-mount .productCardContainer_fcbddd,
+#app-mount :is(.aside_f58343, .user-profile-sidebar, .user-profile-sidebar-redesign) .activity__5be3e,
+#app-mount .cards_b32ca4 .cardsList__9d597 > .firstCardContainer__9d597 > article,
+#app-mount [class*="channelTextArea_"],
+#app-mount [class*="channelTextArea_"] :is([class*="scrollableContainer_"], [class*="themedBackground_"]),
+#app-mount .mainCard_f369db,
+#app-mount .container_faa96b:hover,
+#app-mount .mainCard_f369db .container_faa96b:hover {
+  backdrop-filter: none !important;
 }
 
 /* Current Discord settings structure */
