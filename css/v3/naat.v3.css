@@ -733,6 +733,368 @@
   backdrop-filter: none !important;
 }
 
+/* ============================================================================
+   MARU MESSAGE CARDS
+   Lightweight translucent message surfaces. No per-message backdrop blur.
+   Tuning lives in NotAnotherAnimeTheme.theme.css.
+   ============================================================================ */
+
+#app-mount .wrapper_c19a55 {
+  margin-inline-start: var(--maru-message-margin-left);
+  margin-inline-end: var(--maru-message-margin-right);
+  background-color: var(--maru-message-background) !important;
+  border-radius: var(--maru-message-radius);
+  transition: 300ms ease background-color;
+}
+
+#app-mount .mouse-mode.full-motion .wrapper_c19a55:hover {
+  background-color: var(--maru-message-background-hover) !important;
+}
+
+#app-mount .wrapper_c19a55:not(.groupStart__5126c),
+#app-mount .wrapper_c19a55.compact_c19a55 {
+  margin-block-start: var(--maru-message-row-gap);
+}
+
+#app-mount .wrapper_c19a55.cozy_c19a55,
+#app-mount .wrapper_c19a55.compact_c19a55 {
+  padding-block: var(--maru-message-padding-block) !important;
+  padding-inline: var(--maru-message-padding-inline) !important;
+  border: 2px solid transparent;
+}
+
+/* Keep timestamps and avatars aligned with the inset message card. */
+#app-mount .wrapper_c19a55.cozy_c19a55 .timestamp_c19a55.alt_c19a55 {
+  inset-inline-start: -62px;
+}
+
+#app-mount .avatar_c19a55 {
+  width: 40px;
+  height: 40px;
+  inset-block-start: 0;
+  inset-inline-start: -50px;
+  margin-block-start: 0;
+}
+
+#app-mount .avatarDecoration_c19a55 {
+  inset-block-start: -2px;
+  inset-inline-start: -54px;
+}
+
+#app-mount .wrapper_c19a55.hasReply_c19a55 .avatar_c19a55 {
+  inset-block-start: 28px;
+}
+
+#app-mount .wrapper_c19a55.hasReply_c19a55 .avatarDecoration_c19a55 {
+  inset-block-start: 26px;
+}
+
+/* Discord sometimes wraps a message one level deeper. */
+#app-mount .message_fd14e0 {
+  padding: 0;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+#app-mount .message_fd14e0 .wrapper_c19a55 {
+  margin-inline-start: 48px;
+  margin-inline-end: 0;
+}
+
+/* Reply / mention highlight — full message-box master-accent glow. */
+#app-mount .wrapper_c19a55.mentioned__5126c,
+#app-mount .wrapper_c19a55.replying__5126c {
+  border-color: color-mix(
+    in srgb,
+    var(--maru-accent) var(--maru-reply-glow-border-opacity),
+    transparent
+  ) !important;
+
+  box-shadow:
+    0 0
+    var(--maru-reply-glow-blur)
+    var(--maru-reply-glow-spread)
+    color-mix(
+      in srgb,
+      var(--maru-accent) var(--maru-reply-glow-opacity),
+      transparent
+    ) !important;
+}
+
+#app-mount .wrapper_c19a55.mentioned__5126c::before,
+#app-mount .wrapper_c19a55.replying__5126c::before {
+  display: none !important;
+}
+
+/* ============================================================================
+   MARU MASTER ACCENT — CORE BRAND TOKENS
+   The editable color lives in NotAnotherAnimeTheme.theme.css.
+   Status colors such as danger/success/warning remain untouched.
+   ============================================================================ */
+
+#app-mount {
+  --brand-260: var(--maru-accent) !important;
+  --brand-360: var(--maru-accent) !important;
+  --brand-400: var(--maru-accent) !important;
+  --brand-430: var(--maru-accent) !important;
+  --brand-500: var(--maru-accent) !important;
+  --brand-530: var(--maru-accent-hover) !important;
+  --brand-560: var(--maru-accent-hover) !important;
+  --brand-600: var(--maru-accent-hover) !important;
+
+  /* Legacy / Vencord compatibility tokens. */
+  --brand-experiment: var(--maru-accent) !important;
+  --brand-experiment-560: var(--maru-accent-hover) !important;
+  --brand-experiment-600: var(--maru-accent-hover) !important;
+
+  --text-brand: var(--maru-accent) !important;
+}
+
+/* ============================================================================
+   MARU MASTER ACCENT — SETTINGS / SERVER SETTINGS TOKENS
+   ============================================================================ */
+
+:is(
+  #app-mount .container__8a031:has(.sidebar__409aa),
+  #app-mount .root__49fc1:has(.sidebar__409aa),
+  #app-mount .container_abd9a8,
+  #app-mount .container__9a9f9,
+  #app-mount .standardSidebarView__23e6b,
+  #app-mount [class*="standardSidebarView_"]
+) {
+  --brand-100: var(--maru-accent) !important;
+  --brand-130: var(--maru-accent) !important;
+  --brand-160: var(--maru-accent) !important;
+  --brand-200: var(--maru-accent) !important;
+  --brand-230: var(--maru-accent) !important;
+  --brand-260: var(--maru-accent) !important;
+  --brand-300: var(--maru-accent) !important;
+  --brand-330: var(--maru-accent) !important;
+  --brand-345: var(--maru-accent) !important;
+  --brand-360: var(--maru-accent) !important;
+  --brand-400: var(--maru-accent) !important;
+  --brand-430: var(--maru-accent) !important;
+  --brand-460: var(--maru-accent) !important;
+  --brand-500: var(--maru-accent) !important;
+  --brand-530: var(--maru-accent-hover) !important;
+  --brand-560: var(--maru-accent-hover) !important;
+  --brand-600: var(--maru-accent-hover) !important;
+
+  --brand-experiment: var(--maru-accent) !important;
+  --brand-experiment-100: var(--maru-accent) !important;
+  --brand-experiment-200: var(--maru-accent) !important;
+  --brand-experiment-300: var(--maru-accent) !important;
+  --brand-experiment-400: var(--maru-accent) !important;
+  --brand-experiment-500: var(--maru-accent) !important;
+  --brand-experiment-560: var(--maru-accent-hover) !important;
+  --brand-experiment-600: var(--maru-accent-hover) !important;
+
+  --text-brand: var(--maru-accent) !important;
+  --text-link: var(--maru-accent) !important;
+  --text-link-low-saturation: var(--maru-accent) !important;
+  --focus-primary: var(--maru-accent) !important;
+}
+
+/* Links and obvious brand-colored text throughout Settings / Server Settings. */
+:is(
+  #app-mount .container__8a031:has(.sidebar__409aa),
+  #app-mount .root__49fc1:has(.sidebar__409aa),
+  #app-mount .container_abd9a8,
+  #app-mount .container__9a9f9,
+  #app-mount .standardSidebarView__23e6b,
+  #app-mount [class*="standardSidebarView_"]
+) :is(
+  a,
+  [class*="anchor_"],
+  [class*="link_"]
+):not([class*="danger"]):not([class*="warning"]):not([class*="success"]) {
+  color: var(--maru-accent) !important;
+}
+
+/* Selected tabs + tab underline. */
+:is(
+  #app-mount .container__8a031:has(.sidebar__409aa),
+  #app-mount .root__49fc1:has(.sidebar__409aa),
+  #app-mount .container_abd9a8,
+  #app-mount .container__9a9f9,
+  #app-mount .standardSidebarView__23e6b,
+  #app-mount [class*="standardSidebarView_"]
+) :is(
+  [role="tab"][aria-selected="true"],
+  [class*="tabBar_"] [class*="selected_"],
+  [class*="tab_"][class*="selected_"]
+) {
+  color: var(--maru-accent) !important;
+}
+
+:is(
+  #app-mount .container__8a031:has(.sidebar__409aa),
+  #app-mount .root__49fc1:has(.sidebar__409aa),
+  #app-mount .container_abd9a8,
+  #app-mount .container__9a9f9,
+  #app-mount .standardSidebarView__23e6b,
+  #app-mount [class*="standardSidebarView_"]
+) :is(
+  [role="tab"][aria-selected="true"],
+  [class*="tabBar_"] [class*="selected_"],
+  [class*="tab_"][class*="selected_"]
+)::after {
+  background-color: var(--maru-accent) !important;
+}
+
+/* Enabled switches/toggles. Keep the thumb readable. */
+:is(
+  #app-mount .container__8a031:has(.sidebar__409aa),
+  #app-mount .root__49fc1:has(.sidebar__409aa),
+  #app-mount .container_abd9a8,
+  #app-mount .container__9a9f9,
+  #app-mount .standardSidebarView__23e6b,
+  #app-mount [class*="standardSidebarView_"]
+) :is(
+  [role="switch"][aria-checked="true"],
+  button[role="switch"][aria-checked="true"],
+  [class*="checked_"][role="switch"]
+) {
+  background-color: var(--maru-accent) !important;
+  border-color: var(--maru-accent) !important;
+}
+
+:is(
+  #app-mount .container__8a031:has(.sidebar__409aa),
+  #app-mount .root__49fc1:has(.sidebar__409aa),
+  #app-mount .container_abd9a8,
+  #app-mount .container__9a9f9,
+  #app-mount .standardSidebarView__23e6b,
+  #app-mount [class*="standardSidebarView_"]
+) [role="switch"][aria-checked="true"] :is(
+  [class*="slider_"],
+  [class*="handle_"]
+) {
+  color: #fff !important;
+}
+
+/* Checked boxes + radio controls. */
+:is(
+  #app-mount .container__8a031:has(.sidebar__409aa),
+  #app-mount .root__49fc1:has(.sidebar__409aa),
+  #app-mount .container_abd9a8,
+  #app-mount .container__9a9f9,
+  #app-mount .standardSidebarView__23e6b,
+  #app-mount [class*="standardSidebarView_"]
+) :is(
+  [role="checkbox"][aria-checked="true"],
+  [class*="checkbox_"][class*="checked_"],
+  [role="radio"][aria-checked="true"] [class*="radioIconForeground_"]
+) {
+  background-color: var(--maru-accent) !important;
+  border-color: var(--maru-accent) !important;
+  color: var(--maru-accent) !important;
+}
+
+/* Radio/card selection bars. */
+:is(
+  #app-mount .container__8a031:has(.sidebar__409aa),
+  #app-mount .root__49fc1:has(.sidebar__409aa),
+  #app-mount .container_abd9a8,
+  #app-mount .container__9a9f9,
+  #app-mount .standardSidebarView__23e6b,
+  #app-mount [class*="standardSidebarView_"]
+) :is(
+  [class*="radioBar_"][aria-checked="true"],
+  [class*="item_"][aria-checked="true"]
+) {
+  --radio-bar-accent-color: var(--maru-accent) !important;
+  border-color: var(--maru-accent) !important;
+}
+
+/* Settings sliders: master-accent fill, white knob. */
+:is(
+  #app-mount .container__8a031:has(.sidebar__409aa),
+  #app-mount .root__49fc1:has(.sidebar__409aa),
+  #app-mount .container_abd9a8,
+  #app-mount .container__9a9f9,
+  #app-mount .standardSidebarView__23e6b,
+  #app-mount [class*="standardSidebarView_"]
+) :is(
+  [class*="barFill_"],
+  [class*="markValue_"][class*="selected_"]
+) {
+  background-color: var(--maru-accent) !important;
+}
+
+:is(
+  #app-mount .container__8a031:has(.sidebar__409aa),
+  #app-mount .root__49fc1:has(.sidebar__409aa),
+  #app-mount .container_abd9a8,
+  #app-mount .container__9a9f9,
+  #app-mount .standardSidebarView__23e6b,
+  #app-mount [class*="standardSidebarView_"]
+) :is(
+  [class*="grabber_"],
+  [role="slider"] [class*="grabber_"]
+) {
+  background-color: #fff !important;
+  border-color: #fff !important;
+}
+
+/* Native range inputs in plugins/settings. */
+:is(
+  #app-mount .container__8a031:has(.sidebar__409aa),
+  #app-mount .root__49fc1:has(.sidebar__409aa),
+  #app-mount .container_abd9a8,
+  #app-mount .container__9a9f9,
+  #app-mount .standardSidebarView__23e6b,
+  #app-mount [class*="standardSidebarView_"]
+) input[type="range"] {
+  accent-color: var(--maru-accent) !important;
+}
+
+/* Brand/blurple buttons only. Do NOT touch danger/success/warning semantic buttons. */
+:is(
+  #app-mount .container__8a031:has(.sidebar__409aa),
+  #app-mount .root__49fc1:has(.sidebar__409aa),
+  #app-mount .container_abd9a8,
+  #app-mount .container__9a9f9,
+  #app-mount .standardSidebarView__23e6b,
+  #app-mount [class*="standardSidebarView_"]
+) :is(
+  button[class*="lookFilled_"][class*="colorBrand_"],
+  button[class*="colorBrand_"],
+  [class*="button_"][class*="colorBrand_"]
+) {
+  background-color: var(--maru-accent) !important;
+  border-color: var(--maru-accent) !important;
+}
+
+/* Selected/active pills and Vencord brand chips that otherwise stay blurple. */
+:is(
+  #app-mount .container__8a031:has(.sidebar__409aa),
+  #app-mount .root__49fc1:has(.sidebar__409aa),
+  #app-mount .container_abd9a8,
+  #app-mount .container__9a9f9,
+  #app-mount .standardSidebarView__23e6b,
+  #app-mount [class*="standardSidebarView_"]
+) :is(
+  [aria-selected="true"][class*="pill_"],
+  [aria-pressed="true"][class*="button_"],
+  [class*="vc-"][class*="selected_"]
+) {
+  color: var(--maru-accent) !important;
+  border-color: color-mix(in srgb, var(--maru-accent) 65%, transparent) !important;
+}
+
+/* Keyboard/focus rings in Settings. */
+:is(
+  #app-mount .container__8a031:has(.sidebar__409aa),
+  #app-mount .root__49fc1:has(.sidebar__409aa),
+  #app-mount .container_abd9a8,
+  #app-mount .container__9a9f9,
+  #app-mount .standardSidebarView__23e6b,
+  #app-mount [class*="standardSidebarView_"]
+) :focus-visible {
+  outline-color: var(--maru-accent) !important;
+}
+
 /* Current Discord settings structure */
 .sidebar\_\_409aa,
 .fixedContent\_\_409aa,

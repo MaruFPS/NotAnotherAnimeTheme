@@ -118,6 +118,27 @@
   */
   --message-box-transparency: rgba(0, 0, 0, 0.6);
 
+  /* Maru Message Cards */
+--maru-message-background: rgba(0, 0, 0, 0.19);
+--maru-message-background-hover: rgba(0, 0, 0, 0.28);
+--maru-message-radius: 12px;
+--maru-message-padding-block: 8px;
+--maru-message-padding-inline: 8px;
+--maru-message-margin-left: 68px;
+--maru-message-margin-right: 16px;
+--maru-message-row-gap: 2px;
+
+/* Maru Master Accent */
+--maru-accent: rgb(185, 7, 255);
+--maru-accent-soft: color-mix(in srgb, var(--maru-accent) 18%, transparent);
+--maru-accent-hover: color-mix(in srgb, var(--maru-accent) 82%, transparent);
+
+/* Reply / Mention Glow */
+--maru-reply-glow-opacity: 48%;
+--maru-reply-glow-border-opacity: 78%;
+--maru-reply-glow-blur: 13px;
+--maru-reply-glow-spread: 2px;
+
   /*
     Embed Background Transparency
   */
