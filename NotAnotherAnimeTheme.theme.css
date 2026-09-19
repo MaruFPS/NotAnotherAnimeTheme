@@ -2,13 +2,13 @@
 * @name NotAnotherAnimeTheme
 * @author puckzxz#2080
 * @version 3.2
-* @description An easily customizable and automatically updating theme
+* @description Maru glass and accent controls with NotAnotherAnimeTheme geometry
 * @invite FdZhbjY
-* @source https://github.com/puckzxz/NotAnotherAnimeTheme
-* @updateUrl https://raw.githubusercontent.com/puckzxz/NotAnotherAnimeTheme/master/NotAnotherAnimeTheme.theme.css
+* @source https://github.com/MaruFPS/NotAnotherAnimeTheme/tree/maru-glass
+* @updateUrl https://raw.githubusercontent.com/MaruFPS/NotAnotherAnimeTheme/maru-glass/NotAnotherAnimeTheme.theme.css
 */
 
-@import url(https://puckzxz.github.io/NotAnotherAnimeTheme/build/v3/naat.v3.css);
+@import url(https://raw.githubusercontent.com/MaruFPS/NotAnotherAnimeTheme/maru-glass/build/v3/naat.v3.css);
 
 /*
   To make editing this theme easier I recommend using Notepad++
@@ -21,22 +21,22 @@
   /*
     Theme Background
   */
-  --theme-background-image: url(https://i.imgur.com/j1Z6HVc.jpg);
+  --theme-background-image: url(https://github.com/MaruFPS/MarusWidgets/blob/main/discord%20assets/Chrome%20Wallpaper.png?raw=true);
 
   /*
     Main Theme Color
   */
-  --main-theme-color: rgb(67, 181, 129);
+  --main-theme-color: var(--maru-accent);
 
   /*
     Main Theme Transparency
   */
-  --theme-transparency: rgba(0, 0, 0, 0.8);
+  --theme-transparency: rgba(0, 0, 0, 0.4);
 
   /*
     Home Icon Image
   */
-  --home-icon-image: url(https://i.imgur.com/63g6Em8.jpg);
+  --home-icon-image: url(https://github.com/MaruFPS/MarusWidgets/blob/main/discord%20assets/Chrome%20Maru%20No%20BG.png?raw=true);
 
   /*
     Change your friends icon image position
@@ -65,20 +65,14 @@
   /*
     Mention colors
   */
-  --mention-color: rgba(250, 166, 26, 0.05);
-  --mention-sider: rgba(250, 166, 26, 1);
-  --mention-hover-color: rgba(250, 166, 26, 0.08);
+  --mention-color: var(--maru-accent-soft);
+  --mention-sider: var(--maru-accent);
+  --mention-hover-color: var(--maru-accent-soft);
 
   /*
     Server category hover color
   */
-  --category-hover-color: rgb(60, 202, 138);
-
-  /*
-    Change the unread server animation.
-    Replace it with "none" in order to remove any animations and use the main color instead
-  */
-  --unread-server-animation: rainbow;
+  --category-hover-color: var(--maru-accent-hover);
 
   /*
     Video / Screen share buttons
@@ -137,7 +131,7 @@
     Add Server / Discovery Icon
   */
   --add-discover-icon-transparency: rgba(200, 200, 200, 0.15);
-  --add-discover-icon-color: #43b581;
+  --add-discover-icon-color: var(--maru-accent);
 
   /*
     Channel Limit Number Color
@@ -160,7 +154,7 @@
   /*
     New Messages Bar Color
   */
-  --new-messages-bar-background-color: #7289da;
+  --new-messages-bar-background-color: var(--maru-accent);
   --new-messages-bar-font-color: #fff;
 
   /*
@@ -201,4 +195,48 @@
   --reaction-emoji-border-color: 1px solid transparent;
   --reaction-emoji-hover-background-color: rgba(255, 255, 255, 0.1);
   --reaction-emoji-hover-border-color: rgba(255, 255, 255, 0.2);
+
+  /* Maru glass: shared wallpaper blur; separate blur for temporary overlays. */
+  --naat-glass-settings: rgba(0, 0, 0, 0.26);
+  --naat-glass-page: rgba(0, 0, 0, 0.10);
+  --naat-glass-modal: rgba(0, 0, 0, 0.18);
+  --naat-glass-card: rgba(0, 0, 0, 0.28);
+  --naat-glass-activity: rgba(255, 255, 255, 0.10);
+  --naat-glass-quest: rgba(0, 0, 0, 0.18);
+  --naat-glass-shop: rgba(0, 0, 0, 0.52);
+  --naat-glass-player: rgba(0, 0, 0, 0.08);
+  --naat-glass-composer: rgba(0, 0, 0, 0.10);
+  --naat-glass-blur: 5px;
+  --naat-glass-popout-blur: 5px;
+
+  /* Maru message cards */
+  --maru-message-background: rgba(0, 0, 0, 0.19);
+  --maru-message-background-hover: rgba(0, 0, 0, 0.28);
+  --maru-message-radius: 12px;
+  --maru-message-padding-block: 8px;
+  --maru-message-padding-inline: 8px;
+  --maru-message-margin-left: 68px;
+  --maru-message-margin-right: 16px;
+  --maru-message-row-gap: 2px;
+
+  /* One accent for NAAT, Discord controls, mentions/replies and media. */
+  --maru-accent: rgb(185, 7, 255);
+  --maru-accent-soft: color-mix(in srgb, var(--maru-accent) 18%, transparent);
+  --maru-accent-hover: color-mix(in srgb, var(--maru-accent) 82%, transparent);
+  --maru-reply-glow-opacity: 48%;
+  --maru-reply-glow-border-opacity: 78%;
+  --maru-reply-glow-blur: 13px;
+  --maru-reply-glow-spread: 2px;
+
+  /* Spotify / YTMD scrubber */
+  --maru-media-knob-color: #ffffff;
+  --maru-media-knob-glow: 0 0 5px rgba(255,255,255,.55);
+
+  /* Integrated personal Maru UI */
+  --maru-favorites-icon-image: url("https://github.com/MaruFPS/MarusWidgets/blob/main/discord%20assets/Vibey%20Planet.gif?raw=true");
+  --maru-guild-list-offset: 2px;
+  --maru-home-favorites-width: 54px;
+  --maru-home-favorites-offset: 4px;
+  --maru-home-favorites-bottom-margin: -5px;
+  --maru-select-background: rgba(0, 0, 0, 0.75);
 }
