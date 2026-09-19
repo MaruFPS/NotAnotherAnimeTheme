@@ -1,6 +1,6 @@
 /**
 * @name NotAnotherGlassTheme
-* @author puckzxz#2080 x MaruFPS
+* @author puckzxz x maru
 * @version 3.2
 * @description Performance-focused glass fork of NotAnotherAnimeTheme with Maru controls
 * @invite FdZhbjY
@@ -207,7 +207,7 @@
   --naat-glass-shop: rgba(0, 0, 0, 0.52);
   --naat-glass-player: rgba(0, 0, 0, 0.08);
   --naat-glass-composer: rgba(0, 0, 0, 0.10);
-  --naat-glass-blur: 5px;
+  --naat-glass-blur: 3px;
   --naat-glass-popout-blur: 5px;
 
   /* Maru message cards */
@@ -245,8 +245,8 @@
       150%  = more zoomed
   */
   --maru-favorites-icon-image: url("https://github.com/MaruFPS/MarusWidgets/blob/main/discord%20assets/default-favs.jpg?raw=true");
-  --maru-favorites-icon-position: center center;
-  --maru-favorites-icon-size: cover;
+  --maru-favorites-icon-position: calc(50% - 2px) calc(50% + 2px);
+  --maru-favorites-icon-size: 150%;
   --maru-favorites-icon-repeat: no-repeat;
 
   /* Integrated personal Maru UI */
@@ -255,4 +255,9 @@
   --maru-home-favorites-offset: 4px;
   --maru-home-favorites-bottom-margin: -5px;
   --maru-select-background: rgba(0, 0, 0, 0.75);
+}
+
+/* Hide Discord quest / promotional bar */
+#app-mount [data-testid="quest-bar-container"] {
+    display: none !important;
 }
