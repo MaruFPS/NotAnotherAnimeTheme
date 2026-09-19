@@ -1,20 +1,12 @@
 /**
-* @name NotAnotherGlassTheme (Legacy Filename)
-* @author puckzxz x maru
+* @name NotAnotherGlassTheme
+* @author puckzxz#2080 x MaruFPS
 * @version 3.2
 * @description Performance-focused glass fork of NotAnotherAnimeTheme with Maru controls
 * @invite FdZhbjY
 * @source https://github.com/MaruFPS/NotAnotherAnimeTheme/tree/maru-glass
-* @updateUrl https://raw.githubusercontent.com/MaruFPS/NotAnotherAnimeTheme/maru-glass/NotAnotherAnimeTheme.theme.css
+* @updateUrl https://raw.githubusercontent.com/MaruFPS/NotAnotherAnimeTheme/maru-glass/NotAnotherGlassTheme.theme.css
 */
-
-/*
-  LEGACY FILENAME COMPATIBILITY
-  New installs should use NotAnotherGlassTheme.theme.css.
-  This file stays fully functional so existing NotAnotherAnimeTheme links and
-  installations do not break.
-*/
-
 
 @import url(https://raw.githubusercontent.com/MaruFPS/NotAnotherAnimeTheme/maru-glass/build/v3/naat.v3.css);
 

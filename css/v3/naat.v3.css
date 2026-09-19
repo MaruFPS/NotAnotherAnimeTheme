@@ -358,7 +358,7 @@
 
   background-position: var(--home-icon-image-position);
 
-  background-repeat: no-repeat;
+  background-repeat: var(--home-icon-image-repeat, no-repeat);
 
 }
 
@@ -1396,7 +1396,13 @@
 
   inset: 0;
 
-  background: var(--maru-favorites-icon-image) center / cover no-repeat;
+  background-image: var(--maru-favorites-icon-image);
+
+  background-position: var(--maru-favorites-icon-position, center center);
+
+  background-size: var(--maru-favorites-icon-size, cover);
+
+  background-repeat: var(--maru-favorites-icon-repeat, no-repeat);
 
   pointer-events: none;
 
