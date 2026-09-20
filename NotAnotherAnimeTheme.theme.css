@@ -275,7 +275,13 @@
     clip-path: inset(0 0 16px 0);
 }
 
-/* stop DM/channel rows from rendering underneath the activity panel */
+/* DM list — Discord dynamically resizes the viewport;
+   this only removes the remaining overlap. */
 #app-mount [data-list-id^="private-channels-"] {
     clip-path: inset(0 0 16px 0);
+}
+
+/* Server channel list — same dynamic behavior, different seam correction. */
+#app-mount #channels {
+    clip-path: inset(0 0 12px 0);
 }
