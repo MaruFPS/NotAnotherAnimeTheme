@@ -261,3 +261,13 @@
 #app-mount [data-testid="quest-bar-container"] {
     display: none !important;
 }
+
+/* stop chat content from rendering underneath the composer */
+#app-mount .messagesWrapper__36d07 {
+    clip-path: inset(0 0 16px 0);
+}
+
+/* stop DM/channel rows from rendering underneath the activity panel */
+#app-mount [data-list-id^="private-channels-"] {
+    clip-path: inset(0 0 16px 0);
+}
