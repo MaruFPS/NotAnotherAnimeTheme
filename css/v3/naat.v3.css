@@ -1553,59 +1553,59 @@
   [class*="sidebarList_"],
   [class*="privateChannels_"]
 ) {
-  --channels-default: var(--maru-ui-text-color);
+  --channels-default: var(--maru-ui-text-color, #e2e2e2);
 }
 
 /* Direct message names */
 #app-mount [class*="privateChannels_"]
 a[data-list-item-id^="private-channels-uid_"]
 [class*="nameAndDecorators_"] > [class*="name_"] {
-  color: var(--maru-ui-text-color) !important;
+  color: var(--maru-ui-text-color, #e2e2e2) !important;
 }
 
 /* Direct message / group DM subtext */
 #app-mount [class*="privateChannels_"]
 a[data-list-item-id^="private-channels-uid_"]
 [class*="subText_"] {
-  color: var(--maru-ui-muted-text-color) !important;
+  color: var(--maru-ui-muted-text-color, #e2e2e2) !important;
 }
 
 /* Member list default text */
 #app-mount [class*="members_"] {
-  --channels-default: var(--maru-ui-text-color);
+  --channels-default: var(--maru-ui-text-color, #e2e2e2);
 }
 
 /* Message timestamps */
 #app-mount span[class*="timestamp_"][class*="timestampInline_"] {
-  color: var(--maru-ui-muted-text-color) !important;
+  color: var(--maru-ui-muted-text-color, #e2e2e2) !important;
 }
 
 /* Home / Friends native status subtext */
 #app-mount [class*="peopleList_"] [class*="subtext_"] {
-  color: var(--maru-ui-muted-text-color) !important;
+  color: var(--maru-ui-muted-text-color, #e2e2e2) !important;
 }
 
 /* Home / Friends activity text */
 #app-mount [class*="peopleList_"] [class*="statusText_"] {
-  color: var(--maru-ui-muted-text-color) !important;
+  color: var(--maru-ui-muted-text-color, #e2e2e2) !important;
 }
 
 /* Message edited markers */
 #app-mount span[class*="edited_"] {
-  color: var(--maru-ui-muted-text-color) !important;
-  -webkit-text-fill-color: var(--maru-ui-muted-text-color) !important;
+  color: var(--maru-ui-muted-text-color, #e2e2e2) !important;
+  -webkit-text-fill-color: var(--maru-ui-muted-text-color, #e2e2e2) !important;
 }
 
 /* User Settings sidebar text */
 #app-mount nav[aria-label="Settings pages"] {
-  --text-muted: var(--maru-ui-text-color);
+  --text-muted: var(--maru-ui-text-color, #e2e2e2);
 }
 
 /* Server Settings navigation */
 #app-mount .standardSidebarView__23e6b
   .side_aa8da2
   .item_aa8da2:not(.selected_aa8da2):not(.active_aa8da2) {
-  color: var(--maru-ui-text-color) !important;
+  color: var(--maru-ui-text-color, #e2e2e2) !important;
 }
 
 /* Server Settings category headings */
@@ -1613,5 +1613,5 @@ a[data-list-item-id^="private-channels-uid_"]
   .side_aa8da2
   .header_aa8da2
   [class*="eyebrow_"] {
-  color: var(--maru-ui-muted-text-color) !important;
+  color: var(--maru-ui-muted-text-color, #e2e2e2) !important;
 }
