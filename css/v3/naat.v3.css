@@ -1547,3 +1547,71 @@
   background-color: transparent !important;
   background-image: none !important;
 }
+
+/* Maru UI text readability — channel / DM / Favorites listings */
+#app-mount :is(
+  [class*="sidebarList_"],
+  [class*="privateChannels_"]
+) {
+  --channels-default: var(--maru-ui-text-color);
+}
+
+/* Direct message names */
+#app-mount [class*="privateChannels_"]
+a[data-list-item-id^="private-channels-uid_"]
+[class*="nameAndDecorators_"] > [class*="name_"] {
+  color: var(--maru-ui-text-color) !important;
+}
+
+/* Direct message / group DM subtext */
+#app-mount [class*="privateChannels_"]
+a[data-list-item-id^="private-channels-uid_"]
+[class*="subText_"] {
+  color: var(--maru-ui-muted-text-color) !important;
+}
+
+/* Member list default text */
+#app-mount [class*="members_"] {
+  --channels-default: var(--maru-ui-text-color);
+}
+
+/* Message timestamps */
+#app-mount span[class*="timestamp_"][class*="timestampInline_"] {
+  color: var(--maru-ui-muted-text-color) !important;
+}
+
+/* Home / Friends native status subtext */
+#app-mount [class*="peopleList_"] [class*="subtext_"] {
+  color: var(--maru-ui-muted-text-color) !important;
+}
+
+/* Home / Friends activity text */
+#app-mount [class*="peopleList_"] [class*="statusText_"] {
+  color: var(--maru-ui-muted-text-color) !important;
+}
+
+/* Message edited markers */
+#app-mount span[class*="edited_"] {
+  color: var(--maru-ui-muted-text-color) !important;
+  -webkit-text-fill-color: var(--maru-ui-muted-text-color) !important;
+}
+
+/* User Settings sidebar text */
+#app-mount nav[aria-label="Settings pages"] {
+  --text-muted: var(--maru-ui-text-color);
+}
+
+/* Server Settings navigation */
+#app-mount .standardSidebarView__23e6b
+  .side_aa8da2
+  .item_aa8da2:not(.selected_aa8da2):not(.active_aa8da2) {
+  color: var(--maru-ui-text-color) !important;
+}
+
+/* Server Settings category headings */
+#app-mount .standardSidebarView__23e6b
+  .side_aa8da2
+  .header_aa8da2
+  [class*="eyebrow_"] {
+  color: var(--maru-ui-muted-text-color) !important;
+}

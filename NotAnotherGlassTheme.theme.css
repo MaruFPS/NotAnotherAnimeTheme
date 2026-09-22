@@ -255,6 +255,10 @@
   --maru-home-favorites-offset: 4px;
   --maru-home-favorites-bottom-margin: -5px;
   --maru-select-background: rgba(0, 0, 0, 0.75);
+
+  /* UI text readability */
+--maru-ui-text-color: #e2e2e2;
+--maru-ui-muted-text-color: #e2e2e2;
 }
 
 /* Hide Discord quest / promotional bar */
