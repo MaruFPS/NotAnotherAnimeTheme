@@ -1302,21 +1302,21 @@
 
 }
 
-/* Match Spotify's hover specificity without changing slider geometry. */
+/* Match Spotify's current slider structure without depending on generated hashes. */
 
-#app-mount #vc-spotify-progress-bar .barFill_a562c8 {
+#app-mount #vc-spotify-player [role="slider"] > [class*="bar"] {
 
-  background-color: var(--maru-accent);
+  background-color: var(--maru-accent) !important;
 
 }
 
-#app-mount #vc-spotify-progress-bar .grabber_a562c8 {
+#app-mount #vc-spotify-player [role="slider"] [class*="grabber"] {
 
-  background-color: var(--maru-media-knob-color);
+  background-color: var(--maru-media-knob-color) !important;
 
-  border-color: var(--maru-media-knob-color);
+  border-color: var(--maru-media-knob-color) !important;
 
-  box-shadow: var(--maru-media-knob-glow);
+  box-shadow: var(--maru-media-knob-glow) !important;
 
 }
 
@@ -1334,7 +1334,7 @@
 
   background-color: var(--maru-media-knob-color) !important;
 
-  box-shadow: var(--maru-media-knob-glow);
+  box-shadow: var(--maru-media-knob-glow) !important;
 
 }
 
