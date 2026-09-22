@@ -235,7 +235,7 @@
   --maru-reply-glow-spread: 2px;
 
   /* Spotify / YTMD scrubber */
-  --maru-media-progress-color: rgb(185, 7, 255);
+  --maru-media-progress-color: rgb(0, 149, 175);
   --maru-media-knob-color: #ffffff;
   --maru-media-knob-glow: 0 0 5px rgb(255, 255, 255);
 

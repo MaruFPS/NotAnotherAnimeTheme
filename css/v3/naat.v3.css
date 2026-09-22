@@ -1303,7 +1303,7 @@
 
 /* Match Spotify's current slider structure without depending on generated hashes. */
 
-#app-mount #vc-spotify-progress-bar > [class*="slider"] [class*="barFill"] {
+#app-mount #vc-spotify-progress-bar [class*="slider"] [class*="barFill"] {
 
   background-color: var(--maru-media-progress-color);
 
