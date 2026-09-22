@@ -1305,7 +1305,7 @@
 
 #app-mount #vc-spotify-progress-bar > [class*="slider"] [class*="barFill"] {
 
-  background-color: var(--maru-accent);
+  background-color: var(--maru-media-progress-color);
 
 }
 
@@ -1325,7 +1325,7 @@
 
 #app-mount .panels__5e434 [role="slider"][aria-label="Playback position"] > div:first-child > div {
 
-  background-color: var(--maru-accent) !important;
+  background-color: var(--maru-media-progress-color) !important;
 
 }
 

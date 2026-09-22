@@ -228,7 +228,7 @@
   --maru-message-margin-right: 16px;
   --maru-message-row-gap: 2px;
 
-  /* One accent for NAAT, Discord controls, mentions/replies and media. */
+  /* One accent for NAAT, Discord controls and mentions/replies. */
   --maru-accent: rgb(185, 7, 255);
   --maru-accent-soft: color-mix(in srgb, var(--maru-accent) 18%, transparent);
   --maru-accent-hover: color-mix(in srgb, var(--maru-accent) 82%, transparent);
@@ -238,6 +238,7 @@
   --maru-reply-glow-spread: 2px;
 
   /* Spotify / YTMD scrubber */
+  --maru-media-progress-color: rgb(185, 7, 255);
   --maru-media-knob-color: #ffffff;
   --maru-media-knob-glow: 0 0 5px rgba(255,255,255,.55);
 
