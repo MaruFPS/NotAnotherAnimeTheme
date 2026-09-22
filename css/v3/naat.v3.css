@@ -1,11 +1,10 @@
 .appMount__51fd7 {
-
   background: transparent;
 
   background-image: var(--theme-background-image);
-
-  background-size: cover;
-
+  background-position: var(--theme-background-position, center center);
+  background-size: var(--theme-background-size, cover);
+  background-repeat: var(--theme-background-repeat, no-repeat);
 }
 
 .app__160d8 {

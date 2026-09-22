@@ -23,6 +23,11 @@
   */
   --theme-background-image: url(https://github.com/MaruFPS/MarusWidgets/blob/main/discord%20assets/current-default.jpg?raw=true);
 
+  /* Theme Background Behavior */
+  --theme-background-position: center center;
+  --theme-background-size: cover;
+  --theme-background-repeat: no-repeat;
+
   /*
     Main Theme Color
   */
