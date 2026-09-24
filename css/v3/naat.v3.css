@@ -1614,3 +1614,7 @@ a[data-list-item-id^="private-channels-uid_"]
   [class*="eyebrow_"] {
   color: var(--maru-ui-muted-text-color, #e2e2e2) !important;
 }
+
+.hasThread_c19a55::after {
+    display: none !important;
+}
