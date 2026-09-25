@@ -697,7 +697,7 @@
 
   .popout_af3b89, .messagesPopoutWrap__432f4, .container__9497c,
 
-  .tooltip_fa450d, .container_d9c882, .quickswitcher_ac6cb0),
+  .tooltip_fa450d, .container_d9c882, .quickswitcher_ac6cb0, .container__8e86a),
 
 #app-mount .wrapper_c0e32c:not(.emojiPickerHasTabWrapper_c0e32c),
 
@@ -1617,4 +1617,9 @@ a[data-list-item-id^="private-channels-uid_"]
 
 .hasThread_c19a55::after {
     display: none !important;
+}
+
+/* Keep Discord popout layers above the NAGT outer frame */
+#app-mount [class*="notAppAsidePanel_"] > [class*="layerContainer_"] {
+    z-index: 2147483647 !important;
 }
