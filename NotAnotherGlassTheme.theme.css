@@ -238,6 +238,7 @@
 
   /* Spotify / YTMD scrubber */
   --maru-media-progress-color: rgb(0, 149, 175);
+  --maru-media-progress-glow: 0 0 5px rgb(0, 149, 175);
   --maru-media-knob-color: #ffffff;
   --maru-media-knob-glow: 0 0 5px rgb(255, 255, 255);
 

@@ -1370,6 +1370,7 @@
 #app-mount #vc-spotify-progress-bar [class*="slider"] [class*="barFill"] {
 
   background-color: var(--maru-media-progress-color);
+  box-shadow: var(--maru-media-progress-glow);
 
 }
 
@@ -1390,6 +1391,7 @@
 #app-mount .panels__5e434 [role="slider"][aria-label="Playback position"] > div:first-child > div {
 
   background-color: var(--maru-media-progress-color) !important;
+  box-shadow: var(--maru-media-progress-glow) !important;
 
 }
 
