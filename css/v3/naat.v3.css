@@ -1359,6 +1359,12 @@
 
 }
 
+/* Remove Discord's inset ping-icon edge artifact. */
+#app-mount .panels__5e434 [class*="clickablePing_"] > svg {
+
+  box-shadow: none !important;
+
+}
 /* Match Spotify's current slider structure without depending on generated hashes. */
 
 #app-mount #vc-spotify-progress-bar [class*="slider"] [class*="barFill"] {
