@@ -211,6 +211,8 @@
   --naat-glass-quest: rgba(0, 0, 0, 0.18);
   --naat-glass-shop: rgba(0, 0, 0, 0.52);
   --naat-glass-player: rgba(0, 0, 0, 0.08);
+  --naat-glass-account: rgba(0, 0, 0, 0.08);
+  --naat-glass-activity-blur: 3px;
   --naat-glass-composer: rgba(0, 0, 0, 0.10);
   --naat-glass-blur: 3px;
   --naat-glass-popout-blur: 5px;

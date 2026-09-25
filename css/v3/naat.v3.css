@@ -35,7 +35,33 @@
 
   flex-direction: column;
 
+  background: transparent;
+
+}
+
+#app-mount .panels__5e434::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  right: 0;
+
+  bottom: anchor(--maru-account-panel top);
+
+  pointer-events: none;
+
   background: var(--naat-glass-player);
+
+  backdrop-filter: blur(var(--naat-glass-activity-blur));
+
+  -webkit-backdrop-filter: blur(var(--naat-glass-activity-blur));
+
+  z-index: -1;
 
 }
 
@@ -1317,6 +1343,10 @@
 
   order: 50;
 
+  anchor-name: --maru-account-panel;
+
+  background: var(--naat-glass-account);
+
 }
 
 #app-mount #vc-spotify-player {
@@ -1324,6 +1354,8 @@
   --vc-spotify-green: var(--maru-accent);
 
   background-color: transparent;
+
+  border-bottom: none !important;
 
 }
 
