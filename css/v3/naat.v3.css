@@ -691,7 +691,7 @@
 
    as well, or add another filter to headers, footers, cards or picker tabs. */
 
-#app-mount :is(.root__49fc1, .container__8a031, .menu_c1e9c4,
+#app-mount :is(.root__49fc1, .container__8a031,
 
   .contentWrapper__08434, .autocomplete__13533, .popout_a16aea, .popout__3f413,
 
@@ -709,6 +709,32 @@
 
 }
 
+/* Context menus use a separate backdrop layer so nested submenus can
+   sample and blur the wallpaper independently of their parent menu. */
+#app-mount [role="menu"][class*="menu_"] {
+  position: relative !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+#app-mount [role="menu"][class*="menu_"]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: var(--naat-glass-modal);
+  backdrop-filter: blur(var(--naat-glass-popout-blur));
+  -webkit-backdrop-filter: blur(var(--naat-glass-popout-blur));
+  z-index: 0;
+}
+
+#app-mount [role="menu"][class*="menu_"] > * {
+  position: relative;
+  z-index: 1;
+}
 /* Select controls: the menu shell owns the existing popout blur. Only paint
 
    its scroller and options; never add filters to individual option rows. */
@@ -1623,3 +1649,5 @@ a[data-list-item-id^="private-channels-uid_"]
 #app-mount [class*="notAppAsidePanel_"] > [class*="layerContainer_"] {
     z-index: 2147483647 !important;
 }
+
+
