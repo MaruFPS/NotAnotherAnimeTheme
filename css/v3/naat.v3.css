@@ -1698,3 +1698,8 @@ a[data-list-item-id^="private-channels-uid_"]
 }
 
 
+
+/* Prevent server-banner blend compositing from breaking activity backdrop blur. */
+#app-mount [class*="headerEllipseForeground_"] {
+  mix-blend-mode: normal !important;
+}
