@@ -605,6 +605,12 @@
 
 }
 
+/* Members route shell: Discord now paints this wrapper opaque. */
+#app-mount [class*="chat_"][class*="page_"]:has([class*="memberRowContainer_"]) {
+  background: var(--naat-glass-page) !important;
+  backdrop-filter: blur(var(--naat-glass-blur)) !important;
+  -webkit-backdrop-filter: blur(var(--naat-glass-blur)) !important;
+}
 /* Members is also mounted directly inside Server Settings, without page_c791b2.
 
    Match its exact structural classes rather than depending on that route. */
