@@ -1694,14 +1694,9 @@ a[data-list-item-id^="private-channels-uid_"]
     display: none !important;
 }
 
-/* Keep Discord popout layers above the NAGT outer frame */
-#app-mount [class*="notAppAsidePanel_"] > [class*="layerContainer_"] {
-    z-index: 2147483647 !important;
-}
-/* Keep Settings below Discord's native toast layer while preserving popout priority. */
-#app-mount [class*="notAppAsidePanel_"] > [class*="layerContainer_"]:has(nav[aria-label="Settings pages"]) {
-    z-index: 1000 !important;
-}
+/* Preserve Discord's native portal stacking order. A blanket z-index on every
+   layer container can put context menus behind expanded media/file viewers.
+   Keep the existing NAAT glass and popout surface treatments unchanged. */
 
 
 
