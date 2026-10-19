@@ -1355,6 +1355,14 @@
 
 }
 
+/* MaruActivityPanel shares the activity stack's existing glass backdrop;
+   keep its approved layout and avoid adding a second blur layer. */
+#app-mount .panels__5e434 > .maru-activity-panel {
+
+  background: transparent;
+
+}
+
 #app-mount #vc-spotify-player {
 
   --vc-spotify-green: var(--maru-accent);
