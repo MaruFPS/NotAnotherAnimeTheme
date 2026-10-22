@@ -27,4 +27,19 @@ if (!(Test-Path "$root\minify.exe"))
     Remove-Item "$root\temp" -Force 
 }
 
-Start-Process -Wait -FilePath ".\minify.exe" -ArgumentList "-r -o .\build\ .\css\v3\"
+$minifier = Join-Path $root "minify.exe"
+$outputDirectory = Join-Path $root "build\v3"
+New-Item -ItemType Directory -Path $outputDirectory -Force -ErrorAction Stop | Out-Null
+
+# naat-min is the separate minimal theme, so build each source to its matching file.
+foreach ($file in @("naat.v3.css", "naat-min.v3.css"))
+{
+    $source = Join-Path $root "css\v3\$file"
+    $output = Join-Path $outputDirectory $file
+
+    & $minifier -o $output $source
+    if ($LASTEXITCODE -ne 0)
+    {
+        throw "Minification failed for $file (exit code $LASTEXITCODE)."
+    }
+}

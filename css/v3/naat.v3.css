@@ -1424,6 +1424,36 @@
 
    Keep the final outline-disable, not the superseded ring sizing above it. */
 
+/* Keep the original scrollbar-free guild rail: a thin scrollbar's stable gutter
+   consumes the space needed by the tuned Home/Favorites row. Scrolling remains enabled. */
+#app-mount [data-list-id="guildsnav"] > [class*="scroller_"] {
+  scrollbar-width: none;
+}
+
+/* Share the existing 54px columns across the header, servers and utilities.
+   Mixed native item widths and horizontal margins otherwise give each flex row
+   different centerlines. Center mixed-height items without resizing their icons. */
+#app-mount [data-list-id="guildsnav"] > [class*="scroller_"],
+#app-mount [data-list-id="guildsnav"] > [class*="scroller_"] > [role="group"] {
+  align-items: center;
+}
+
+#app-mount [data-list-id="guildsnav"] > [class*="scroller_"] > :is(
+  [class*="tutorialContainer_"], [class*="listItem_"]),
+#app-mount [data-list-id="guildsnav"] > [class*="scroller_"] > [role="group"] > :is(
+  [class*="listItem_"], [class*="folderGroup_"]) {
+  box-sizing: border-box;
+  width: var(--maru-home-favorites-width);
+  flex: 0 0 var(--maru-home-favorites-width);
+  margin-inline: 0;
+}
+
+#app-mount [data-list-id="guildsnav"] > [class*="scroller_"] > [class*="tutorialContainer_"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #app-mount [data-list-id="guildsnav"] {
 
   transform: translateY(var(--maru-guild-list-offset));
@@ -1490,25 +1520,21 @@
 
 }
 
-/* One structural lookup finds Favorites' list item; Home has an exact wrapper.
-
-   This retains the reference's 54px columns, 4px nudge and -5px bottom spacing. */
+/* Keep the tuned header bottom spacing within the shared columns. The former
+   header-only horizontal margins and 4px nudge shifted this row away from the
+   servers and utilities; shared slots now determine its horizontal position. */
 
 #app-mount [data-list-id="guildsnav"] :is(.tutorialContainer__1f388,
 
   .listItem__650eb:has([data-list-item-id*="favorites" i])) {
 
-  width: var(--maru-home-favorites-width);
-
-  flex: 0 0 var(--maru-home-favorites-width);
-
-  margin: 0 2px var(--maru-home-favorites-bottom-margin);
+  margin-block: 0 var(--maru-home-favorites-bottom-margin);
 
   padding: 0;
 
   position: relative;
 
-  left: var(--maru-home-favorites-offset);
+  left: auto;
 
 }
 
