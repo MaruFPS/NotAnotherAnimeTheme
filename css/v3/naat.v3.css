@@ -1438,6 +1438,12 @@
   align-items: center;
 }
 
+/* Expanded folders fill their flex row, as before the shared slot alignment.
+   A direct guild group marks an expanded folder; closed icons remain centered. */
+#app-mount [data-list-id="guildsnav"] > [class*="scroller_"] > [role="group"] > [class*="folderGroup_"]:has(> [role="group"]) {
+  align-self: stretch;
+}
+
 #app-mount [data-list-id="guildsnav"] > [class*="scroller_"] > :is(
   [class*="tutorialContainer_"], [class*="listItem_"]),
 #app-mount [data-list-id="guildsnav"] > [class*="scroller_"] > [role="group"] > :is(
