@@ -1339,6 +1339,18 @@
 
 }
 
+/* Discord's native activity host also renders non-game content. Only its game
+   renderer supplies this icon wrapper; retain DOM order within each category. */
+#app-mount .panels__5e434 > .activityPanel__5e434:has([class*="gameIconWrapper_"]) {
+  order: 22;
+}
+
+/* The edge above Voice Connected belongs to the preceding activity card.
+   Keep its border width so card geometry and disconnected styling are unchanged. */
+#app-mount .panels__5e434:has(.container_e131a9) > .activityPanel__5e434 {
+  border-bottom-color: transparent;
+}
+
 #app-mount .panels__5e434 > .container_e131a9 {
 
   order: 40;
